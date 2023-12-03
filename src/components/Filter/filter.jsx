@@ -1,6 +1,6 @@
 
 import { useDispatch } from 'react-redux';
-import { filterChange } from 'redux/filtersSlice';
+import { filterChange } from 'redux/Contacts/filtersSlice';
 
 import { nanoid } from "nanoid";
 import css from "./filter.module.css";

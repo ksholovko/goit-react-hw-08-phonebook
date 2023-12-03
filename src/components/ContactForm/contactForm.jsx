@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact, fetchContacts } from "redux/operations";
+import { addContact, fetchContacts } from "redux/Contacts/operations";
 import { nanoid } from "nanoid";
 import css from "./contactForm.module.css"
-import { selectContacts } from "redux/selectors";
+import { selectContacts } from "redux/Contacts/selectors";
 
 export default function ContactForm() {
     
@@ -11,7 +11,7 @@ export default function ContactForm() {
     const contacts = useSelector(selectContacts);
 
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [number, setNumber] = useState('');
 
     const nameInputId = nanoid();
     const telInputId = nanoid();
@@ -30,8 +30,8 @@ export default function ContactForm() {
                 setName(value);
                 break;
         
-            case "phone":
-                setPhone(value);
+            case "number":
+                setNumber(value);
                 break;
          
             default:
@@ -42,7 +42,7 @@ export default function ContactForm() {
     const handleSubmit = event => {
     
         event.preventDefault();
-        const newContact = { name, phone };
+        const newContact = { name, number };
         
         if (contacts.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
     alert(`${newContact.name} is already in the contacts`);
@@ -51,7 +51,7 @@ export default function ContactForm() {
         
         dispatch(addContact(newContact));
       setName('');
-      setPhone('');
+      setNumber('');
     }
 
 return ( 
@@ -60,7 +60,7 @@ return (
         <label htmlFor={nameInputId} className={css.label}> Name </label>
         <input className={css.formInput} id={nameInputId} type="text" name="name" value={name} required onChange={handleInputChange} />
         <label htmlFor={telInputId} className={css.label}>Number</label>
-        <input className={css.formInput} id={telInputId} type="tel" name="phone" value={phone} required onChange={handleInputChange} />     
+        <input className={css.formInput} id={telInputId} type="tel" name="number" value={number} required onChange={handleInputChange} />     
         <button className={css.button} type="submit">Add contact</button>
     </form>
     

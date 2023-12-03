@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteContact } from 'redux/operations'
+import { deleteContact } from 'redux/Contacts/operations'
 import ContactItem from "./contactItem"
 import css from "./conctactList.module.css"
-import { selectContacts, selectFilter, selectIsLoading } from 'redux/selectors';
+import { selectContacts, selectFilter, selectIsLoading } from 'redux/Contacts/selectors';
 
 export default function ContactList() {
 
@@ -30,9 +30,9 @@ export default function ContactList() {
                 <div>Loading...</div>
             ) : (
                 <ul className={css.contactList}>
-                    {filteredContacts.map(({ id, name, phone }) => (
+                    {filteredContacts.map(({ id, name, number }) => (
                         <li key={id} className={css.contactItem}>
-                            <ContactItem id={id} name={name} phone={phone} onDelete={() => deleteContactItem(id)} />
+                            <ContactItem id={id} name={name} number={number} onDelete={() => deleteContactItem(id)} />
                         </li>
                     ))}
                 </ul>
