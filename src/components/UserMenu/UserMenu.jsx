@@ -18,7 +18,7 @@ const UserMenu = () => {
   return (
       <div className={css.List}>
           <p>{user.email}</p>
-    <button type="submit" onClick={handleLogOut}>Logout</button>
+    <button type="submit" onClick={handleLogOut} className={css.button}>Logout</button>
 </div>
   );
 };

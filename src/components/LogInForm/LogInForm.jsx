@@ -14,6 +14,7 @@ const LogInForm = () => {
     }
 
     return (
+    
         <form className={css.form} onSubmit={handleSubmit}>
             <label htmlFor="email" className={css.label}>Email</label>  
                 <input className={css.formInput} id="email" type="email" name="email" required />
@@ -22,7 +23,8 @@ const LogInForm = () => {
                 <input className={css.formInput} id="password" type="password" name="password" required />
           
             <button className={css.button} type="submit">Log In</button>
-        </form>
+            </form>
+    
     )
 }
 
