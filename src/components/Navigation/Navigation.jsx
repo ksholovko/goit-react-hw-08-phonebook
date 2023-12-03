@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import css from "./Navigation.module.css"
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn, selectUser } from "redux/Auth/selectors";
+import { selectIsLoggedIn } from "redux/Auth/selectors";
 import UserMenu from "components/UserMenu/UserMenu";
 
 const Navigation = () => {

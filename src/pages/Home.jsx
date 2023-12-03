@@ -7,7 +7,6 @@ const Home = () => {
         <div style={{
             display: "flex",
             marginTop: '25vh',
-            display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             gap: '0.5rem'
