@@ -5,6 +5,7 @@
 
 .button {
 
+    cursor: pointer;
     justify-self: end;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
